@@ -398,14 +398,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.4s;
-  padding: 0 15px;
-}
-.warning__visible {
   visibility: visible;
   opacity: 1;
+  transition: all 0.4s;
+  padding: 0 15px;
 }
 .warning__body {
   display: inline-flex;

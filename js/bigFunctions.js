@@ -1,6 +1,6 @@
 //Навешиваем событие на confirm
 
-function addComponent(){//Функция-добавляем компонент=====================================================================
+function addComponent(event){//Функция-добавляем компонент=====================================================================
     const component = createElement('article',{classList:'component'})//-----------------------------Создает компонент с классом компонент
     todoMain.insertAdjacentElement('afterbegin',component)//-----------------------------------------Указываем место для создания компонента
     modalWindow.classList.remove('modal__visible')//-------------------------------------------------Делает компонент видимым
@@ -35,39 +35,39 @@ function addComponent(){//Функция-добавляем компонент==
     const arrow = createElement('div',{classList:'component__arrow'})
     componentMain.insertAdjacentElement('beforeend',arrow)
     function moveToProgress(event){
-        progressMain.append(component)
-        component.classList.add('component__progress')
-        arrow.style.display = 'none'
-        //Преобразуем кнопу EDIT в BACK
-        componentEdit.textContent = 'BACK'
-        componentEdit.removeEventListener('click',editHelpModalWindow)
-        // Создаем функцию для переноса обратно в колонку в TODO
-        function moveToTodo(event){
-            todoMain.append(event.target.closest('.component'))
-            componentEdit.addEventListener('click',editHelpModalWindow)
-            componentDelete.addEventListener('click',deleteComponent)
-            componentEdit.textContent = 'EDIT'
-            componentDelete.textContent = 'DELETE'
-            arrow.style.display = 'flex'
-            component.classList.remove('component__progress')
-        }
-        componentEdit.addEventListener('click',moveToTodo)
-        //Преобразуем delete в complite
-        componentDelete.textContent = 'COMPLITE'
-        componentDelete.removeEventListener('click',deleteComponent)
-        //Создаем функцию для переноса в колонку DONE
-        function moveToDone(event){
-            doneMain.append(event.target.closest('.component')) 
-            component.classList.add('component__done')
-            componentDelete.removeEventListener('click',moveToDone)
-            componentDelete.textContent = 'DELETE'
-            componentDelete.addEventListener('click',deleteComponent)
-            componentEdit.style.display = 'none'
-        }
-        componentDelete.addEventListener('click',moveToDone)
-        
+            progressMain.append(component)
+            component.classList.add('component__progress')
+            arrow.style.display = 'none'
+            //Преобразуем кнопу EDIT в BACK
+            componentEdit.textContent = 'BACK'
+            componentEdit.removeEventListener('click',editHelpModalWindow)
+            // Создаем функцию для переноса обратно в колонку в TODO
+            function moveToTodo(event){
+                todoMain.append(event.target.closest('.component'))
+                componentEdit.addEventListener('click',editHelpModalWindow)
+                componentDelete.addEventListener('click',deleteComponent)
+                componentEdit.textContent = 'EDIT'
+                componentDelete.textContent = 'DELETE'
+                arrow.style.display = 'flex'
+                component.classList.remove('component__progress')
+            }
+            componentEdit.addEventListener('click',moveToTodo)
+            //Преобразуем delete в complite
+            componentDelete.textContent = 'COMPLITE'
+            componentDelete.removeEventListener('click',deleteComponent)
+            //Создаем функцию для переноса в колонку DONE
+            function moveToDone(event){
+                doneMain.append(event.target.closest('.component')) 
+                component.classList.add('component__done')
+                componentDelete.removeEventListener('click',moveToDone)
+                componentDelete.textContent = 'DELETE'
+                componentDelete.addEventListener('click',deleteComponent)
+                componentEdit.style.display = 'none'
+            }
+            componentDelete.addEventListener('click',moveToDone)
+           
     }
-    arrow.addEventListener('click',moveToProgress)
+    arrow.addEventListener('click',(event)=>{progressMain.children.length<6?moveToProgress():windowWarning(moveToProgress)})
     //arrowImg
     const arrowImg = createElement('img')
     arrowImg.setAttribute('src','./img/arrow.png')

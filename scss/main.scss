@@ -355,14 +355,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    visibility:hidden;
-    opacity: 0;
+    visibility:visible;
+    opacity: 1;
     transition: all 0.4s;
     padding: 0 15px;
-    &__visible{
-        visibility: visible;
-        opacity: 1;
-    }
     &__body{
         display:inline-flex;
         flex-direction: column;
