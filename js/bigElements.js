@@ -46,22 +46,24 @@ modalButtons.insertAdjacentElement('beforeend',confirm)//-----------------------
 
 
 //Создаем окно-warning===================================================================================================
-const warning = createElement('div',{classList:'warning'})
-root.insertAdjacentElement('afterend',warning)
-//warningBody
-const warningBody = createElement('div',{classList:'warning__body'})
-warning.insertAdjacentElement('beforeend',warningBody)
-//warningTitle
-const warningTitle = createElement('h2',{classList:'warning__title',textContent:'Warning! Нужно выполнить текущие дела, прежде чем добавлять новые.'})
-warningBody.insertAdjacentElement('beforeend',warningTitle)
-//warningButtons
-const warningButtons=createElement('div',{classList:'warning__buttons'})
-warningBody.insertAdjacentElement('beforeend',warningButtons)
-//warningCancel
-const warningCancel = createElement('button',{classList:'warning__cancel',textContent:'cancel'})
-warningButtons.insertAdjacentElement('beforeend',warningCancel)
-warningCancel.addEventListener('click', function(){warning.classList.remove('warning__visible')})
-//warningConfirm
-const warningConfirm = createElement('button',{classList:'warning__confirm',textContent:'confirm'})
-warningButtons.insertAdjacentElement('beforeend',warningConfirm)
-warningConfirm.addEventListener('click',()=>{addComponent(); warning.classList.remove('warning__visible')})
+function windowWarning(moveToProgress){
+    const warning = createElement('div',{classList:'warning'})
+    root.insertAdjacentElement('afterend',warning)
+    //warningBody
+    const warningBody = createElement('div',{classList:'warning__body'})
+    warning.insertAdjacentElement('beforeend',warningBody)
+    //warningTitle
+    const warningTitle = createElement('h2',{classList:'warning__title',textContent:'Warning! Больше 6 дел нежелательно добавлять в прогресс'})
+    warningBody.insertAdjacentElement('beforeend',warningTitle)
+    //warningButtons
+    const warningButtons=createElement('div',{classList:'warning__buttons'})
+    warningBody.insertAdjacentElement('beforeend',warningButtons)
+    //warningCancel
+    const warningCancel = createElement('button',{classList:'warning__cancel',textContent:'cancel'})
+    warningButtons.insertAdjacentElement('beforeend',warningCancel)
+    warningCancel.addEventListener('click', function(){warning.remove()})
+    //warningConfirm
+    const warningConfirm = createElement('button',{classList:'warning__confirm',textContent:'confirm'})
+    warningButtons.insertAdjacentElement('beforeend',warningConfirm)
+    warningConfirm.addEventListener('click',()=>{moveToProgress(),warning.remove()})
+}

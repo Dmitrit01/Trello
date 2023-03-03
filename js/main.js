@@ -26,8 +26,8 @@ function showModal(){
     modalWindow.classList.add('modal__visible')//-------------------------------------------Модальное окно ниже создано
     bodyElement.classList.add('lock')//----------------------------------------------------Добавляем lock на body
 }
-let components = document.getElementsByClassName('component')//Узнаем кол-во компонентов в todoMain
-todoFooter.addEventListener('click',function(){ components.length<6?showModal():warning.classList.add('warning__visible')})
+
+todoFooter.addEventListener('click',showModal)
 
 //progress колонка======================================================================================================================================
 const progress = createElement('div',{classList:'box__item progress'})//-----------------------cоздаем элемент progress
