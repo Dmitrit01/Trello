@@ -102,7 +102,7 @@
 }
 @media screen and (max-width: 768px) {
   .box__item {
-    min-height: 140px;
+    min-height: 35px;
   }
 }
 
@@ -127,12 +127,42 @@
 .todo__top-number {
   font-size: 18px;
 }
+.todo__accordion {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .todo__accordion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 25px;
+    height: 20px;
+    background: #fff;
+    border: 1px solid black;
+    position: relative;
+  }
+  .todo__accordion__img {
+    position: absolute;
+    width: 7px;
+    height: 10px;
+    transform: rotate(90deg);
+  }
+  .todo__accordion_return {
+    transform: rotate(-90deg);
+  }
+}
 .todo__main {
   flex-grow: 1;
   padding: 15px 10px 15px 10px;
   display: flex;
   flex-direction: column;
   row-gap: 15px;
+}
+@media screen and (max-width: 768px) {
+  .todo__main_close {
+    display: none;
+  }
 }
 .todo__footer {
   background: #d5e8d4;
@@ -175,12 +205,42 @@
 .progress__top-number {
   font-size: 18px;
 }
+.progress__accordion {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .progress__accordion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 25px;
+    height: 20px;
+    background: #fff;
+    border: 1px solid black;
+    position: relative;
+  }
+  .progress__accordion__img {
+    position: absolute;
+    width: 7px;
+    height: 10px;
+    transform: rotate(90deg);
+  }
+  .progress__accordion_return {
+    transform: rotate(-90deg);
+  }
+}
 .progress__main {
   flex-grow: 1;
   padding: 15px 10px 15px 10px;
   row-gap: 15px;
   display: flex;
   flex-direction: column;
+}
+@media screen and (max-width: 768px) {
+  .progress__main_close {
+    display: none;
+  }
 }
 
 .done__top {
@@ -204,12 +264,42 @@
 .done__top-number {
   font-size: 18px;
 }
+.done__accordion {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .done__accordion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 25px;
+    height: 20px;
+    background: #fff;
+    border: 1px solid black;
+    position: relative;
+  }
+  .done__accordion__img {
+    position: absolute;
+    width: 7px;
+    height: 10px;
+    transform: rotate(90deg);
+  }
+  .done__accordion_return {
+    transform: rotate(-90deg);
+  }
+}
 .done__main {
   flex-grow: 1;
   padding: 15px 10px 15px 10px;
   row-gap: 15px;
   display: flex;
   flex-direction: column;
+}
+@media screen and (max-width: 768px) {
+  .done__main_close {
+    display: none;
+  }
 }
 .done__footer {
   background: #dae8fc;

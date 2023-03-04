@@ -85,7 +85,7 @@
         background: #fff;
         overflow: hidden;
         @media screen and (max-width:768px){
-            min-height: 140px;
+            min-height: 35px;
         }
     }
 }
@@ -110,14 +110,42 @@
     &__top-number{
         font-size: 18px;  
     }
+    &__accordion{
+        display: none;
+        @media screen and (max-width:768px){
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            width: 25px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid black;
+            position: relative;
+            &__img{
+                position: absolute;
+                width: 7px;
+                height: 10px;
+                transform: rotate(90deg);
+            }
+            &_return{
+                transform: rotate(-90deg);
+            }
+        }
+    }
     &__main {
         flex-grow: 1;
         padding: 15px 10px 15px 10px;
         display: flex;
         flex-direction: column;
         row-gap: 15px;
-        
+        &_close{
+            @media screen and (max-width:768px){
+                display: none;
+            }
+        }
     }
+    
     //Сomponent
     &__footer{
         background: #D5E8D4FF;
@@ -158,12 +186,40 @@
     &__top-number{
         font-size: 18px;  
     }
+    &__accordion{
+        display: none;
+        @media screen and (max-width:768px){
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            width: 25px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid black;
+            position: relative;
+            &__img{
+                position: absolute;
+                width: 7px;
+                height: 10px;
+                transform: rotate(90deg);
+            }
+            &_return{
+                transform: rotate(-90deg);
+            }
+        }
+    }
     &__main{
         flex-grow: 1;
         padding: 15px 10px 15px 10px;
         row-gap: 15px;
         display: flex;
         flex-direction: column;
+        &_close{
+            @media screen and (max-width:768px){
+                display: none;
+            }
+        }
     }
 }
 //Третий item-done
@@ -187,13 +243,40 @@
     &__top-number{
         font-size: 18px;  
     }
+    &__accordion{
+        display: none;
+        @media screen and (max-width:768px){
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            width: 25px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid black;
+            position: relative;
+            &__img{
+                position: absolute;
+                width: 7px;
+                height: 10px;
+                transform: rotate(90deg);
+            }
+            &_return{
+                transform: rotate(-90deg);
+            }
+        }
+    }
     &__main {
         flex-grow: 1;
         padding: 15px 10px 15px 10px;
         row-gap: 15px;
         display: flex;
         flex-direction: column;
-       
+        &_close{
+            @media screen and (max-width:768px){
+                display: none;
+            }
+        }
     }
     &__footer{
         background: #DAE8FCFF;
@@ -213,6 +296,7 @@
         }
     }
 }
+//=======================================================================================================================================
 //Модальное окно
 .modal{
     background-color: rgba(27, 28, 33, 0.6);
