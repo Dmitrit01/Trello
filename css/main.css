@@ -219,11 +219,16 @@
   justify-content: center;
   align-items: center;
   min-height: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 @media screen and (max-width: 768px) {
   .done__footer {
     min-height: 35px;
   }
+}
+.done__footer:hover {
+  background: rgb(199, 223, 255);
 }
 
 .modal {

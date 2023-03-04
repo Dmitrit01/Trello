@@ -45,7 +45,7 @@ modalButtons.insertAdjacentElement('beforeend',confirm)//-----------------------
 
 
 
-//Создаем окно-warning===================================================================================================
+//Функция окно-warning===================================================================================================
 function windowWarning(moveToProgress){
     const warning = createElement('div',{classList:'warning'})
     root.insertAdjacentElement('afterend',warning)
@@ -67,3 +67,35 @@ function windowWarning(moveToProgress){
     warningButtons.insertAdjacentElement('beforeend',warningConfirm)
     warningConfirm.addEventListener('click',()=>{moveToProgress(),warning.remove()})
 }
+
+//Функция окно-warning2 Связанная с delete all===================================================================================================
+function windowWarning2(){
+    const warning2 = createElement('div',{classList:'warning'})
+    root.insertAdjacentElement('afterend',warning2)
+    //warningBody
+    const warningBody2 = createElement('div',{classList:'warning__body'})
+    warning2.insertAdjacentElement('beforeend',warningBody2)
+    //warningTitle
+    const warningTitle2 = createElement('h2',{classList:'warning__title',textContent:'Вы уверенны что хотите удалить все дела?'})
+    warningBody2.insertAdjacentElement('beforeend',warningTitle2)
+    //warningButtons
+    const warningButtons2=createElement('div',{classList:'warning__buttons'})
+    warningBody2.insertAdjacentElement('beforeend',warningButtons2)
+    //warningCancel
+    const warningCancel2 = createElement('button',{classList:'warning__cancel',textContent:'cancel'})
+    warningButtons2.insertAdjacentElement('beforeend',warningCancel2)
+    warningCancel2.addEventListener('click', function(){warning2.remove()})
+    //warningConfirm
+    const warningConfirm2 = createElement('button',{classList:'warning__confirm',textContent:'confirm'})
+    warningButtons2.insertAdjacentElement('beforeend',warningConfirm2)
+    function deleteComponentsDone(){
+        let arrayDone = doneMain.children
+        for(let i=0;i<arrayDone.length;i){
+            arrayDone[i].remove()
+        }
+        checkCountComponents()
+        warning2.remove()
+    }
+    warningConfirm2.addEventListener('click',deleteComponentsDone)
+}
+doneFooter.addEventListener('click',windowWarning2)

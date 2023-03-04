@@ -98,7 +98,7 @@ function addComponent(event){//Функция-добавляем компоне�
 }
 confirm.addEventListener('click',()=>{addComponent();modalTitle.value='';textArea.value='';select.value='User 01';checkCountComponents()})
 
-//Ф-ция которая создает окно для редактирования==========================================================================================================
+//Ф-ция которая создает окно для редактирования================================================================================================
 function editHelpModalWindow(event){
     // modalWindow
     const modalWindowEdit = createElement('div',{classList:'modal modal__visible'})//-----------------------------------------------создаем элемент modalWindow
@@ -156,6 +156,7 @@ function editHelpModalWindow(event){
     
 }
 
+//Ф-ция которая проверяет кол-во элементов в каждом ===========================================================================================
 function checkCountComponents(){
     let  childrenTodo = todoMain.getElementsByClassName('component')
     todoTopNumber.textContent = childrenTodo.length
