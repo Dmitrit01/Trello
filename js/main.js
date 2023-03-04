@@ -48,8 +48,7 @@ progress.insertAdjacentElement('afterbegin',progressTop)//----------------------
 //Вставляем элементы в progressTop
 const progressTopTitle = createElement('h2',{classList:'progress__top-title',textContent:'progress'})//----создаем элемент progressTopTitle
 
-let counterProgress = 0
-const progressTopNumber = createElement('div',{classList:'progress__top-number',textContent:counterProgress})//------создаем элемент progressTopNumber
+const progressTopNumber = createElement('div',{classList:'progress__top-number',textContent:0})//------создаем элемент progressTopNumber
 progressTop.insertAdjacentElement('beforeend',progressTopTitle)//--------------------------------------указываем позицию для progressTopTitle
 progressTop.insertAdjacentElement('beforeend',progressTopNumber)//-------------------------------------указываем позицию для progressTopNumber
 //progressMain
@@ -68,9 +67,7 @@ done.insertAdjacentElement('afterbegin',doneTop)//------------------------------
 
 //Вставляем элементы в doneTop
 const doneTopTitle = createElement('h2',{classList:'done__top-title',textContent:'done'})//----создаем элемент doneTopTitle
-
-let counterDone = 0
-const doneTopNumber = createElement('div',{classList:'done__top-number',textContent:counterDone})//------создаем элемент doneTopNumber
+const doneTopNumber = createElement('div',{classList:'done__top-number',textContent:0})//------создаем элемент doneTopNumber
 doneTop.insertAdjacentElement('beforeend',doneTopTitle)//--------------------------------------указываем позицию для doneTopTitle
 doneTop.insertAdjacentElement('beforeend',doneTopNumber)//-------------------------------------указываем позицию для doneTopNumber
 //doneMain
@@ -79,6 +76,7 @@ done.insertAdjacentElement('beforeend',doneMain)//------------------------------
 //doneFooter
 const doneFooter= createElement('footer',{classList:'done__footer',textContent:'deleteAll'})//--cоздаем элемент doneFooter
 done.insertAdjacentElement('beforeend',doneFooter)//-------------------------------------------указываем позицию для doneFooter
+
 
 
 //Каркас модального окна==============================================================================================================
