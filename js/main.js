@@ -11,20 +11,28 @@ todo.insertAdjacentElement('afterbegin',todoTop)//------------------------------
 
 //Вставляем элементы в todoTop
 const todoTopTitle = createElement('h2',{classList:'todo__top-title',textContent:'TODO'})//----создаем элемент todoTopTitle
-
 const todoTopNumber = createElement('div',{classList:'todo__top-number',textContent:0})//------создаем элемент todoTopNumber
+
+const todoAccordion = createElement('div',{classList:'todo__accordion'})//---------------------создаем todoAccordion
+//Функция для гормошки todo
+function moveTodoAccordion(){
+    todoMain.classList.toggle('todo__main_close')
+    todoAccordionImg.classList.toggle('todo__accordion_return')
+}
+todoAccordion.addEventListener('click',moveTodoAccordion)
+//img в todoAccordion
+const todoAccordionImg = createElement('img',{classList:'todo__accordion__img'})
+todoAccordionImg.setAttribute('src','img/arrow.png')
+todoAccordion.insertAdjacentElement('beforeend',todoAccordionImg)
+
+
 todoTop.insertAdjacentElement('beforeend',todoTopTitle)//--------------------------------------указываем позицию для todoTopTitle
 todoTop.insertAdjacentElement('beforeend',todoTopNumber)//-------------------------------------указываем позицию для todoTopNumber
+todoTop.insertAdjacentElement('beforeend',todoAccordion)//-------------------------------------указываем позицию для todoAccordion
+
 //todoMain
 const todoMain = createElement('main',{classList:'todo__main'})//------------------------------cоздаем элемент todoMain
 todo.insertAdjacentElement('beforeend',todoMain)//---------------------------------------------указываем позицию для todoMain
-
-
-    
-
-
-
-
 
 //todoFooter
 const todoFooter= createElement('footer',{classList:'todo__footer',textContent:'Add'})//-------cоздаем элемент todoFooter
@@ -47,10 +55,22 @@ progress.insertAdjacentElement('afterbegin',progressTop)//----------------------
 
 //Вставляем элементы в progressTop
 const progressTopTitle = createElement('h2',{classList:'progress__top-title',textContent:'progress'})//----создаем элемент progressTopTitle
-
 const progressTopNumber = createElement('div',{classList:'progress__top-number',textContent:0})//------создаем элемент progressTopNumber
+const progressAccordion = createElement('div',{classList:'progress__accordion'})
+//Функция для гормошки progress
+function moveProgressAccordion(){
+    progressMain.classList.toggle('progress__main_close')
+    progressAccordionImg.classList.toggle('progress__accordion_return')
+}
+progressAccordion.addEventListener('click',moveProgressAccordion)
+//img в progressAccordion
+const progressAccordionImg = createElement('img',{classList:'progress__accordion__img'})
+progressAccordionImg.setAttribute('src','img/arrow.png')
+progressAccordion.insertAdjacentElement('beforeend',progressAccordionImg)
+
 progressTop.insertAdjacentElement('beforeend',progressTopTitle)//--------------------------------------указываем позицию для progressTopTitle
 progressTop.insertAdjacentElement('beforeend',progressTopNumber)//-------------------------------------указываем позицию для progressTopNumber
+progressTop.insertAdjacentElement('beforeend',progressAccordion)//-------------------------------------указываем позицию для progressAccordion
 //progressMain
 const progressMain = createElement('main',{classList:'progress__main'})//------------------------------cоздаем элемент progressMain
 progress.insertAdjacentElement('beforeend',progressMain)//-------------------------------------------указываем позицию для progressMain
@@ -68,8 +88,20 @@ done.insertAdjacentElement('afterbegin',doneTop)//------------------------------
 //Вставляем элементы в doneTop
 const doneTopTitle = createElement('h2',{classList:'done__top-title',textContent:'done'})//----создаем элемент doneTopTitle
 const doneTopNumber = createElement('div',{classList:'done__top-number',textContent:0})//------создаем элемент doneTopNumber
+const doneAccordion = createElement('div',{classList:'done__accordion'})//---------------------создаем todoAccordion
+//Функция для гормошки done
+function moveDoneAccordion(){
+    doneMain.classList.toggle('done__main_close')
+    doneAccordionImg.classList.toggle('done__accordion_return')
+}
+doneAccordion.addEventListener('click',moveDoneAccordion)
+//img в doneAccordion
+const doneAccordionImg = createElement('img',{classList:'done__accordion__img'})
+doneAccordionImg.setAttribute('src','img/arrow.png')
+doneAccordion.insertAdjacentElement('beforeend',doneAccordionImg)
 doneTop.insertAdjacentElement('beforeend',doneTopTitle)//--------------------------------------указываем позицию для doneTopTitle
 doneTop.insertAdjacentElement('beforeend',doneTopNumber)//-------------------------------------указываем позицию для doneTopNumber
+doneTop.insertAdjacentElement('beforeend',doneAccordion)//-------------------------------------указываем позицию для todoAccordion
 //doneMain
 const doneMain = createElement('main',{classList:'done__main'})//------------------------------cоздаем элемент doneMain
 done.insertAdjacentElement('beforeend',doneMain)//---------------------------------------------указываем позицию для doneMain
