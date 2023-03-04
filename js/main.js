@@ -11,12 +11,21 @@ todo.insertAdjacentElement('afterbegin',todoTop)//------------------------------
 
 //Вставляем элементы в todoTop
 const todoTopTitle = createElement('h2',{classList:'todo__top-title',textContent:'TODO'})//----создаем элемент todoTopTitle
+
 const todoTopNumber = createElement('div',{classList:'todo__top-number',textContent:0})//------создаем элемент todoTopNumber
 todoTop.insertAdjacentElement('beforeend',todoTopTitle)//--------------------------------------указываем позицию для todoTopTitle
 todoTop.insertAdjacentElement('beforeend',todoTopNumber)//-------------------------------------указываем позицию для todoTopNumber
 //todoMain
 const todoMain = createElement('main',{classList:'todo__main'})//------------------------------cоздаем элемент todoMain
 todo.insertAdjacentElement('beforeend',todoMain)//---------------------------------------------указываем позицию для todoMain
+
+
+    
+
+
+
+
+
 //todoFooter
 const todoFooter= createElement('footer',{classList:'todo__footer',textContent:'Add'})//-------cоздаем элемент todoFooter
 todo.insertAdjacentElement('beforeend',todoFooter)//-------------------------------------------указываем позицию для todoFooter
@@ -38,7 +47,9 @@ progress.insertAdjacentElement('afterbegin',progressTop)//----------------------
 
 //Вставляем элементы в progressTop
 const progressTopTitle = createElement('h2',{classList:'progress__top-title',textContent:'progress'})//----создаем элемент progressTopTitle
-const progressTopNumber = createElement('div',{classList:'progress__top-number',textContent:0})//------создаем элемент progressTopNumber
+
+let counterProgress = 0
+const progressTopNumber = createElement('div',{classList:'progress__top-number',textContent:counterProgress})//------создаем элемент progressTopNumber
 progressTop.insertAdjacentElement('beforeend',progressTopTitle)//--------------------------------------указываем позицию для progressTopTitle
 progressTop.insertAdjacentElement('beforeend',progressTopNumber)//-------------------------------------указываем позицию для progressTopNumber
 //progressMain
@@ -57,7 +68,9 @@ done.insertAdjacentElement('afterbegin',doneTop)//------------------------------
 
 //Вставляем элементы в doneTop
 const doneTopTitle = createElement('h2',{classList:'done__top-title',textContent:'done'})//----создаем элемент doneTopTitle
-const doneTopNumber = createElement('div',{classList:'done__top-number',textContent:0})//------создаем элемент doneTopNumber
+
+let counterDone = 0
+const doneTopNumber = createElement('div',{classList:'done__top-number',textContent:counterDone})//------создаем элемент doneTopNumber
 doneTop.insertAdjacentElement('beforeend',doneTopTitle)//--------------------------------------указываем позицию для doneTopTitle
 doneTop.insertAdjacentElement('beforeend',doneTopNumber)//-------------------------------------указываем позицию для doneTopNumber
 //doneMain
@@ -66,13 +79,6 @@ done.insertAdjacentElement('beforeend',doneMain)//------------------------------
 //doneFooter
 const doneFooter= createElement('footer',{classList:'done__footer',textContent:'deleteAll'})//--cоздаем элемент doneFooter
 done.insertAdjacentElement('beforeend',doneFooter)//-------------------------------------------указываем позицию для doneFooter
-
-
-
-
-
-
-
 
 
 //Каркас модального окна==============================================================================================================

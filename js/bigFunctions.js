@@ -1,5 +1,4 @@
 //Навешиваем событие на confirm
-
 function addComponent(event){//Функция-добавляем компонент=====================================================================
     const component = createElement('article',{classList:'component'})//-----------------------------Создает компонент с классом компонент
     todoMain.insertAdjacentElement('afterbegin',component)//-----------------------------------------Указываем место для создания компонента
@@ -23,6 +22,7 @@ function addComponent(event){//Функция-добавляем компоне�
     //Навешиваем событие на delete
     function deleteComponent(event){
         event.target.closest('.component').remove()
+        checkCountComponents()
     }
     componentDelete.addEventListener('click',deleteComponent)
     //componentMain=====================================================================================
@@ -50,6 +50,7 @@ function addComponent(event){//Функция-добавляем компоне�
                 componentDelete.textContent = 'DELETE'
                 arrow.style.display = 'flex'
                 component.classList.remove('component__progress')
+                checkCountComponents()
             }
             componentEdit.addEventListener('click',moveToTodo)
             //Преобразуем delete в complite
@@ -63,9 +64,10 @@ function addComponent(event){//Функция-добавляем компоне�
                 componentDelete.textContent = 'DELETE'
                 componentDelete.addEventListener('click',deleteComponent)
                 componentEdit.style.display = 'none'
+                checkCountComponents()
             }
             componentDelete.addEventListener('click',moveToDone)
-           
+            checkCountComponents()
     }
     arrow.addEventListener('click',(event)=>{progressMain.children.length<6?moveToProgress():windowWarning(moveToProgress)})
     //arrowImg
@@ -94,18 +96,9 @@ function addComponent(event){//Функция-добавляем компоне�
     //Закончили set интервал
     bodyElement.classList.remove('lock')
 }
-confirm.addEventListener('click',()=>{addComponent();modalTitle.value='';textArea.value='';select.value='User 01'})
+confirm.addEventListener('click',()=>{addComponent();modalTitle.value='';textArea.value='';select.value='User 01';checkCountComponents()})
 
-
-
-
-
-
-
-
-
-
-//Ф-ция которая создает окно для редактирования======================================================================================================
+//Ф-ция которая создает окно для редактирования==========================================================================================================
 function editHelpModalWindow(event){
     // modalWindow
     const modalWindowEdit = createElement('div',{classList:'modal modal__visible'})//-----------------------------------------------создаем элемент modalWindow
@@ -161,4 +154,13 @@ function editHelpModalWindow(event){
     }
     cancelEdit.addEventListener('click',cancelModalEdit)
     
+}
+
+function checkCountComponents(){
+    let  childrenTodo = todoMain.getElementsByClassName('component')
+    todoTopNumber.textContent = childrenTodo.length
+    let  childrenProgress = progressMain.getElementsByClassName('component')
+    progressTopNumber.textContent = childrenProgress.length
+    let  childrenDone = doneMain.getElementsByClassName('component')
+    doneTopNumber.textContent = childrenDone.length
 }
