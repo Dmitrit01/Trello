@@ -139,10 +139,13 @@
         display: flex;
         flex-direction: column;
         row-gap: 15px;
+        &_close{
+            @media screen and (max-width:768px){
+                display: none;
+            }
+        }
     }
-    &__main_close{
-        display: none;
-    }
+    
     //Сomponent
     &__footer{
         background: #D5E8D4FF;
@@ -213,7 +216,9 @@
         display: flex;
         flex-direction: column;
         &_close{
-            display: none;
+            @media screen and (max-width:768px){
+                display: none;
+            }
         }
     }
 }
@@ -268,7 +273,9 @@
         display: flex;
         flex-direction: column;
         &_close{
-            display: none;
+            @media screen and (max-width:768px){
+                display: none;
+            }
         }
     }
     &__footer{

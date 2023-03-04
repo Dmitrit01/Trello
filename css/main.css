@@ -159,8 +159,10 @@
   flex-direction: column;
   row-gap: 15px;
 }
-.todo__main_close {
-  display: none;
+@media screen and (max-width: 768px) {
+  .todo__main_close {
+    display: none;
+  }
 }
 .todo__footer {
   background: #d5e8d4;
@@ -235,8 +237,10 @@
   display: flex;
   flex-direction: column;
 }
-.progress__main_close {
-  display: none;
+@media screen and (max-width: 768px) {
+  .progress__main_close {
+    display: none;
+  }
 }
 
 .done__top {
@@ -292,8 +296,10 @@
   display: flex;
   flex-direction: column;
 }
-.done__main_close {
-  display: none;
+@media screen and (max-width: 768px) {
+  .done__main_close {
+    display: none;
+  }
 }
 .done__footer {
   background: #dae8fc;
